@@ -1,0 +1,108 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <!-- Title -->
+    <mxCell id="2" value="CodeWhale 产品架构图" style="text;html=1;fontSize=20;fontStyle=1;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+      <mxGeometry x="200" y="10" width="400" height="40" as="geometry"/>
+    </mxCell>
+    <!-- Layer 1: User Facing Products -->
+    <mxCell id="10" value="用户产品层" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;verticalAlign=top;align=center;" vertex="1" parent="1">
+      <mxGeometry x="40" y="60" width="720" height="100" as="geometry"/>
+    </mxCell>
+    <mxCell id="11" value="CLI 终端交互&#xa;(TUI)" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=center;" vertex="1" parent="1">
+      <mxGeometry x="60" y="90" width="120" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="12" value="Web 控制台&#xa;(Next.js)" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=center;" vertex="1" parent="1">
+      <mxGeometry x="200" y="90" width="120" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="13" value="VS Code 插件" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=center;" vertex="1" parent="1">
+      <mxGeometry x="340" y="90" width="120" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="14" value="飞书 Bot&#xa;集成" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=center;" vertex="1" parent="1">
+      <mxGeometry x="480" y="90" width="120" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="15" value="Telegram Bot&#xa;集成" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=center;" vertex="1" parent="1">
+      <mxGeometry x="620" y="90" width="120" height="50" as="geometry"/>
+    </mxCell>
+    <!-- Layer 2: Core Capabilities -->
+    <mxCell id="20" value="核心能力层" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=13;verticalAlign=top;align=center;" vertex="1" parent="1">
+      <mxGeometry x="40" y="180" width="720" height="120" as="geometry"/>
+    </mxCell>
+    <mxCell id="21" value="AI 对话引擎&#xa;(Agent Loop)" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;align=center;" vertex="1" parent="1">
+      <mxGeometry x="60" y="210" width="130" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="22" value="工具执行系统&#xa;(Tool Registry)" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;align=center;" vertex="1" parent="1">
+      <mxGeometry x="210" y="210" width="130" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="23" value="子 Agent 编排&#xa;(SubAgent)" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;align=center;" vertex="1" parent="1">
+      <mxGeometry x="360" y="210" width="130" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="24" value="任务调度&#xa;(Task Manager)" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;align=center;" vertex="1" parent="1">
+      <mxGeometry x="510" y="210" width="130" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="25" value="上下文压缩&#xa;(Compaction)" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;align=center;" vertex="1" parent="1">
+      <mxGeometry x="60" y="265" width="130" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="26" value="会话持久化&#xa;(Session Store)" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;align=center;" vertex="1" parent="1">
+      <mxGeometry x="210" y="265" width="130" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="27" value="LSP 诊断&#xa;(Post-Edit)" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;align=center;" vertex="1" parent="1">
+      <mxGeometry x="360" y="265" width="130" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="28" value="沙箱安全&#xa;(Seatbelt/Landlock)" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;align=center;" vertex="1" parent="1">
+      <mxGeometry x="510" y="265" width="130" height="30" as="geometry"/>
+    </mxCell>
+    <!-- Layer 3: Extension -->
+    <mxCell id="30" value="扩展生态层" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=13;verticalAlign=top;align=center;" vertex="1" parent="1">
+      <mxGeometry x="40" y="320" width="720" height="80" as="geometry"/>
+    </mxCell>
+    <mxCell id="31" value="MCP 协议&#xa;(外部工具服务)" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;align=center;" vertex="1" parent="1">
+      <mxGeometry x="60" y="350" width="150" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="32" value="Skills 插件&#xa;(可编程技能)" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;align=center;" vertex="1" parent="1">
+      <mxGeometry x="230" y="350" width="150" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="33" value="Hooks 钩子&#xa;(生命周期事件)" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;align=center;" vertex="1" parent="1">
+      <mxGeometry x="400" y="350" width="150" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="34" value="WhaleFlow&#xa;(工作流引擎)" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;align=center;" vertex="1" parent="1">
+      <mxGeometry x="570" y="350" width="150" height="40" as="geometry"/>
+    </mxCell>
+    <!-- Layer 4: LLM Provider -->
+    <mxCell id="40" value="模型服务层" style="rounded=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=13;verticalAlign=top;align=center;" vertex="1" parent="1">
+      <mxGeometry x="40" y="420" width="720" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="41" value="DeepSeek API" style="rounded=1;fillColor=#d0cee2;strokeColor=#56517e;fontSize=11;align=center;" vertex="1" parent="1">
+      <mxGeometry x="60" y="445" width="130" height="35" as="geometry"/>
+    </mxCell>
+    <mxCell id="42" value="OpenAI 兼容 API" style="rounded=1;fillColor=#d0cee2;strokeColor=#56517e;fontSize=11;align=center;" vertex="1" parent="1">
+      <mxGeometry x="210" y="445" width="130" height="35" as="geometry"/>
+    </mxCell>
+    <mxCell id="43" value="Anthropic API" style="rounded=1;fillColor=#d0cee2;strokeColor=#56517e;fontSize=11;align=center;" vertex="1" parent="1">
+      <mxGeometry x="360" y="445" width="130" height="35" as="geometry"/>
+    </mxCell>
+    <mxCell id="44" value="自定义 Provider" style="rounded=1;fillColor=#d0cee2;strokeColor=#56517e;fontSize=11;align=center;" vertex="1" parent="1">
+      <mxGeometry x="510" y="445" width="130" height="35" as="geometry"/>
+    </mxCell>
+    <!-- Layer 5: Infrastructure -->
+    <mxCell id="50" value="基础设施层" style="rounded=1;fillColor=#e6e6e6;strokeColor=#999999;fontStyle=1;fontSize=13;verticalAlign=top;align=center;" vertex="1" parent="1">
+      <mxGeometry x="40" y="510" width="720" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="51" value="本地文件系统" style="rounded=1;fillColor=#cccccc;strokeColor=#666666;fontSize=10;align=center;" vertex="1" parent="1">
+      <mxGeometry x="60" y="535" width="110" height="35" as="geometry"/>
+    </mxCell>
+    <mxCell id="52" value="SQLite 状态存储" style="rounded=1;fillColor=#cccccc;strokeColor=#666666;fontSize=10;align=center;" vertex="1" parent="1">
+      <mxGeometry x="185" y="535" width="110" height="35" as="geometry"/>
+    </mxCell>
+    <mxCell id="53" value="OS Keyring 密钥" style="rounded=1;fillColor=#cccccc;strokeColor=#666666;fontSize=10;align=center;" vertex="1" parent="1">
+      <mxGeometry x="310" y="535" width="110" height="35" as="geometry"/>
+    </mxCell>
+    <mxCell id="54" value="Git 版本快照" style="rounded=1;fillColor=#cccccc;strokeColor=#666666;fontSize=10;align=center;" vertex="1" parent="1">
+      <mxGeometry x="435" y="535" width="110" height="35" as="geometry"/>
+    </mxCell>
+    <mxCell id="55" value="npm 分发 (CDN)" style="rounded=1;fillColor=#cccccc;strokeColor=#666666;fontSize=10;align=center;" vertex="1" parent="1">
+      <mxGeometry x="560" y="535" width="110" height="35" as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>

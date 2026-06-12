@@ -2098,21 +2098,37 @@ fn build_empty_state_lines(app: &App, area: Rect) -> Vec<Line<'static>> {
 
     let body = vec![
         Line::from(Span::styled(
-            format!("{inset}>_ codewhale (v{})", env!("CARGO_PKG_VERSION")),
+            format!("{inset}     ~            .-'"),
+            Style::default().fg(palette::DEEPSEEK_BLUE),
+        )),
+        Line::from(Span::styled(
+            format!("{inset}      '--.-- --- .'"),
+            Style::default().fg(palette::DEEPSEEK_BLUE),
+        )),
+        Line::from(Span::styled(
+            format!("{inset}          '----'"),
+            Style::default().fg(palette::DEEPSEEK_BLUE),
+        )),
+        Line::from(""),
+        Line::from(Span::styled(
+            format!("{inset}  \u{1F40B} CodeWhale v{}", env!("CARGO_PKG_VERSION")),
             Style::default().fg(palette::DEEPSEEK_BLUE).bold(),
         )),
         Line::from(""),
         Line::from(Span::styled(
-            format!("{inset}model: {}  /model to switch", app.model),
+            format!("{inset}  model: {}  /model to switch", app.model),
             Style::default().fg(palette::TEXT_MUTED),
         )),
         Line::from(Span::styled(
-            format!("{inset}directory: {workspace}"),
+            format!("{inset}  directory: {workspace}"),
             Style::default().fg(palette::TEXT_MUTED),
+        )),
+        Line::from(Span::styled(
+            format!("{inset}  theme: /theme high-contrast"),
+            Style::default().fg(palette::TEXT_HINT),
         )),
     ];
 
-    // Keep the welcome block near the top of the chat pane (header is separate).
     let top_padding = 2usize;
     let mut lines = Vec::new();
     for _ in 0..top_padding {

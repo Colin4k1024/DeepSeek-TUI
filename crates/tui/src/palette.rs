@@ -214,6 +214,22 @@ pub const MATRIX_TEXT_SOFT_RGB: (u8, u8, u8) = (221, 255, 221); // #DDFFDD
 pub const MATRIX_TEXT_DIM_RGB: (u8, u8, u8) = (0, 68, 0); // #004400
 pub const MATRIX_BORDER_RGB: (u8, u8, u8) = (0, 204, 0); // #00CC00
 
+// High-contrast palette — pure black/white with vivid accents for accessibility.
+pub const HC_BG_RGB: (u8, u8, u8) = (0, 0, 0); // #000000 Pure Black
+pub const HC_PANEL_RGB: (u8, u8, u8) = (15, 15, 15); // #0F0F0F
+pub const HC_ELEVATED_RGB: (u8, u8, u8) = (30, 30, 30); // #1E1E1E
+pub const HC_SELECTION_RGB: (u8, u8, u8) = (0, 60, 80); // #003C50
+pub const HC_TEXT_BODY_RGB: (u8, u8, u8) = (255, 255, 255); // #FFFFFF Pure White
+pub const HC_TEXT_SOFT_RGB: (u8, u8, u8) = (240, 240, 240); // #F0F0F0
+pub const HC_TEXT_MUTED_RGB: (u8, u8, u8) = (200, 200, 200); // #C8C8C8
+pub const HC_TEXT_HINT_RGB: (u8, u8, u8) = (170, 170, 170); // #AAAAAA
+pub const HC_ACCENT_PRIMARY_RGB: (u8, u8, u8) = (0, 255, 255); // #00FFFF Cyan
+pub const HC_ACCENT_SECONDARY_RGB: (u8, u8, u8) = (255, 255, 0); // #FFFF00 Yellow
+pub const HC_ERROR_RGB: (u8, u8, u8) = (255, 50, 50); // #FF3232 Red
+pub const HC_SUCCESS_RGB: (u8, u8, u8) = (0, 255, 128); // #00FF80 Green
+pub const HC_WARNING_RGB: (u8, u8, u8) = (255, 200, 0); // #FFC800 Amber
+pub const HC_BORDER_RGB: (u8, u8, u8) = (255, 255, 255); // #FFFFFF White
+
 // New semantic colors
 pub const BORDER_COLOR_RGB: (u8, u8, u8) = WHALE_BORDER_RGB; // #2A4A7F
 
@@ -535,6 +551,7 @@ pub enum PaletteMode {
     Light,
     Grayscale,
     SolarizedLight,
+    HighContrast,
 }
 
 impl PaletteMode {
@@ -859,6 +876,49 @@ pub const GRAYSCALE_UI_THEME: UiTheme = UiTheme {
     tool_running: GRAYSCALE_TEXT_SOFT,
     tool_success: GRAYSCALE_TEXT_HINT,
     tool_failed: GRAYSCALE_TEXT_BODY,
+};
+
+pub const HC_UI_THEME: UiTheme = UiTheme {
+    name: "high-contrast",
+    mode: PaletteMode::HighContrast,
+    surface_bg: Color::Rgb(HC_BG_RGB.0, HC_BG_RGB.1, HC_BG_RGB.2),
+    panel_bg: Color::Rgb(HC_PANEL_RGB.0, HC_PANEL_RGB.1, HC_PANEL_RGB.2),
+    elevated_bg: Color::Rgb(HC_ELEVATED_RGB.0, HC_ELEVATED_RGB.1, HC_ELEVATED_RGB.2),
+    composer_bg: Color::Rgb(HC_PANEL_RGB.0, HC_PANEL_RGB.1, HC_PANEL_RGB.2),
+    selection_bg: Color::Rgb(HC_SELECTION_RGB.0, HC_SELECTION_RGB.1, HC_SELECTION_RGB.2),
+    header_bg: Color::Rgb(HC_BG_RGB.0, HC_BG_RGB.1, HC_BG_RGB.2),
+    footer_bg: Color::Rgb(HC_BG_RGB.0, HC_BG_RGB.1, HC_BG_RGB.2),
+    text_dim: Color::Rgb(HC_TEXT_HINT_RGB.0, HC_TEXT_HINT_RGB.1, HC_TEXT_HINT_RGB.2),
+    text_hint: Color::Rgb(HC_TEXT_HINT_RGB.0, HC_TEXT_HINT_RGB.1, HC_TEXT_HINT_RGB.2),
+    text_muted: Color::Rgb(HC_TEXT_MUTED_RGB.0, HC_TEXT_MUTED_RGB.1, HC_TEXT_MUTED_RGB.2),
+    text_body: Color::Rgb(HC_TEXT_BODY_RGB.0, HC_TEXT_BODY_RGB.1, HC_TEXT_BODY_RGB.2),
+    text_soft: Color::Rgb(HC_TEXT_SOFT_RGB.0, HC_TEXT_SOFT_RGB.1, HC_TEXT_SOFT_RGB.2),
+    border: Color::Rgb(HC_BORDER_RGB.0, HC_BORDER_RGB.1, HC_BORDER_RGB.2),
+    accent_primary: Color::Rgb(HC_ACCENT_PRIMARY_RGB.0, HC_ACCENT_PRIMARY_RGB.1, HC_ACCENT_PRIMARY_RGB.2),
+    accent_secondary: Color::Rgb(HC_ACCENT_SECONDARY_RGB.0, HC_ACCENT_SECONDARY_RGB.1, HC_ACCENT_SECONDARY_RGB.2),
+    accent_action: Color::Rgb(255, 255, 255),
+    error_fg: Color::Rgb(HC_ERROR_RGB.0, HC_ERROR_RGB.1, HC_ERROR_RGB.2),
+    error_hover: Color::Rgb(255, 100, 100),
+    error_surface: Color::Rgb(40, 0, 0),
+    error_border: Color::Rgb(HC_ERROR_RGB.0, HC_ERROR_RGB.1, HC_ERROR_RGB.2),
+    error_text: Color::Rgb(255, 200, 200),
+    warning: Color::Rgb(HC_WARNING_RGB.0, HC_WARNING_RGB.1, HC_WARNING_RGB.2),
+    success: Color::Rgb(HC_SUCCESS_RGB.0, HC_SUCCESS_RGB.1, HC_SUCCESS_RGB.2),
+    info: Color::Rgb(HC_ACCENT_PRIMARY_RGB.0, HC_ACCENT_PRIMARY_RGB.1, HC_ACCENT_PRIMARY_RGB.2),
+    mode_agent: Color::Rgb(HC_ACCENT_PRIMARY_RGB.0, HC_ACCENT_PRIMARY_RGB.1, HC_ACCENT_PRIMARY_RGB.2),
+    mode_yolo: Color::Rgb(HC_ERROR_RGB.0, HC_ERROR_RGB.1, HC_ERROR_RGB.2),
+    mode_plan: Color::Rgb(HC_ACCENT_SECONDARY_RGB.0, HC_ACCENT_SECONDARY_RGB.1, HC_ACCENT_SECONDARY_RGB.2),
+    mode_goal: Color::Rgb(HC_SUCCESS_RGB.0, HC_SUCCESS_RGB.1, HC_SUCCESS_RGB.2),
+    status_ready: Color::Rgb(HC_SUCCESS_RGB.0, HC_SUCCESS_RGB.1, HC_SUCCESS_RGB.2),
+    status_working: Color::Rgb(HC_ACCENT_PRIMARY_RGB.0, HC_ACCENT_PRIMARY_RGB.1, HC_ACCENT_PRIMARY_RGB.2),
+    status_warning: Color::Rgb(HC_WARNING_RGB.0, HC_WARNING_RGB.1, HC_WARNING_RGB.2),
+    diff_added_fg: Color::Rgb(HC_SUCCESS_RGB.0, HC_SUCCESS_RGB.1, HC_SUCCESS_RGB.2),
+    diff_deleted_fg: Color::Rgb(HC_ERROR_RGB.0, HC_ERROR_RGB.1, HC_ERROR_RGB.2),
+    diff_added_bg: Color::Rgb(0, 30, 0),
+    diff_deleted_bg: Color::Rgb(40, 0, 0),
+    tool_running: Color::Rgb(HC_ACCENT_PRIMARY_RGB.0, HC_ACCENT_PRIMARY_RGB.1, HC_ACCENT_PRIMARY_RGB.2),
+    tool_success: Color::Rgb(HC_SUCCESS_RGB.0, HC_SUCCESS_RGB.1, HC_SUCCESS_RGB.2),
+    tool_failed: Color::Rgb(HC_ERROR_RGB.0, HC_ERROR_RGB.1, HC_ERROR_RGB.2),
 };
 
 pub const CATPPUCCIN_MOCHA_UI_THEME: UiTheme = UiTheme {
@@ -1394,6 +1454,7 @@ impl UiTheme {
             PaletteMode::Light => LIGHT_UI_THEME,
             PaletteMode::Grayscale => GRAYSCALE_UI_THEME,
             PaletteMode::SolarizedLight => SOLARIZED_LIGHT_UI_THEME,
+            PaletteMode::HighContrast => HC_UI_THEME,
         }
     }
 
@@ -1443,6 +1504,7 @@ pub fn theme_label_for_mode(mode: PaletteMode) -> &'static str {
         PaletteMode::Light => "light",
         PaletteMode::Grayscale => "grayscale",
         PaletteMode::SolarizedLight => "solarized-light",
+        PaletteMode::HighContrast => "high-contrast",
     }
 }
 
@@ -1488,6 +1550,7 @@ pub fn adapt_fg_for_palette_mode(color: Color, _bg: Color, mode: PaletteMode) ->
         PaletteMode::Light => adapt_fg_for_light_palette(color),
         PaletteMode::Grayscale => adapt_fg_for_grayscale_palette(color),
         PaletteMode::SolarizedLight => adapt_fg_for_solarized_light_palette(color),
+        PaletteMode::HighContrast => color,
     }
 }
 
@@ -1498,6 +1561,7 @@ pub fn adapt_bg_for_palette_mode(color: Color, mode: PaletteMode) -> Color {
         PaletteMode::Light => adapt_bg_for_light_palette(color),
         PaletteMode::Grayscale => adapt_bg_for_grayscale_palette(color),
         PaletteMode::SolarizedLight => adapt_bg_for_solarized_light_palette(color),
+        PaletteMode::HighContrast => color,
     }
 }
 

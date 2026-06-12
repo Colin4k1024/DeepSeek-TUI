@@ -173,6 +173,32 @@ impl Theme {
             PaletteMode::Light => Self::light(),
             PaletteMode::Grayscale => Self::grayscale(),
             PaletteMode::SolarizedLight => Self::solarized_light(),
+            PaletteMode::HighContrast => Self::high_contrast(),
+        }
+    }
+
+    #[must_use]
+    pub const fn high_contrast() -> Self {
+        Self {
+            variant: Variant::Dark,
+            section_borders: Borders::ALL,
+            section_border_type: BorderType::Plain,
+            section_border_color: Color::Rgb(255, 255, 255),
+            section_bg: Color::Rgb(0, 0, 0),
+            section_title_color: Color::Rgb(0, 255, 255),
+            section_padding: Padding::horizontal(1),
+            tool_title_color: Color::Rgb(255, 255, 255),
+            tool_value_color: Color::Rgb(200, 200, 200),
+            tool_label_color: Color::Rgb(170, 170, 170),
+            tool_running_accent: Color::Rgb(0, 255, 255),
+            tool_success_accent: Color::Rgb(0, 255, 128),
+            tool_failed_accent: Color::Rgb(255, 50, 50),
+            plan_progress_color: Color::Rgb(0, 255, 128),
+            plan_summary_color: Color::Rgb(200, 200, 200),
+            plan_explanation_color: Color::Rgb(170, 170, 170),
+            plan_pending_color: Color::Rgb(200, 200, 200),
+            plan_in_progress_color: Color::Rgb(255, 255, 0),
+            plan_completed_color: Color::Rgb(0, 255, 128),
         }
     }
 

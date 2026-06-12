@@ -1,0 +1,138 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <!-- Title -->
+    <mxCell id="2" value="CodeWhale 数据架构图" style="text;html=1;fontSize=20;fontStyle=1;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+      <mxGeometry x="200" y="5" width="400" height="35" as="geometry"/>
+    </mxCell>
+    <!-- Data Sources -->
+    <mxCell id="10" value="数据来源" style="text;html=1;fontSize=13;fontStyle=1;align=left;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+      <mxGeometry x="20" y="45" width="100" height="25" as="geometry"/>
+    </mxCell>
+    <mxCell id="11" value="用户输入&#xa;(Prompt)" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=center;" vertex="1" parent="1">
+      <mxGeometry x="20" y="75" width="100" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="12" value="项目代码&#xa;(Workspace)" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=center;" vertex="1" parent="1">
+      <mxGeometry x="135" y="75" width="100" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="13" value="LLM 响应&#xa;(Stream)" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=center;" vertex="1" parent="1">
+      <mxGeometry x="250" y="75" width="100" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="14" value="工具执行结果&#xa;(Tool Output)" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=center;" vertex="1" parent="1">
+      <mxGeometry x="365" y="75" width="100" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="15" value="MCP 服务端&#xa;数据" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=center;" vertex="1" parent="1">
+      <mxGeometry x="480" y="75" width="100" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="16" value="配置文件&#xa;(TOML/JSON)" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=center;" vertex="1" parent="1">
+      <mxGeometry x="595" y="75" width="100" height="40" as="geometry"/>
+    </mxCell>
+    <!-- Data Processing -->
+    <mxCell id="20" value="数据处理层" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;verticalAlign=top;align=center;" vertex="1" parent="1">
+      <mxGeometry x="20" y="135" width="760" height="100" as="geometry"/>
+    </mxCell>
+    <mxCell id="21" value="上下文构建&#xa;System Prompt + History&#xa;+ Project Docs" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;align=center;" vertex="1" parent="1">
+      <mxGeometry x="35" y="160" width="140" height="55" as="geometry"/>
+    </mxCell>
+    <mxCell id="22" value="消息压缩&#xa;Compaction Engine&#xa;(超长对话截断)" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;align=center;" vertex="1" parent="1">
+      <mxGeometry x="190" y="160" width="130" height="55" as="geometry"/>
+    </mxCell>
+    <mxCell id="23" value="上下文清洗&#xa;Purge Engine&#xa;(选择性移除)" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;align=center;" vertex="1" parent="1">
+      <mxGeometry x="335" y="160" width="130" height="55" as="geometry"/>
+    </mxCell>
+    <mxCell id="24" value="Token 计费&#xa;Pricing Engine&#xa;(用量追踪)" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;align=center;" vertex="1" parent="1">
+      <mxGeometry x="480" y="160" width="130" height="55" as="geometry"/>
+    </mxCell>
+    <mxCell id="25" value="事件序列化&#xa;Event Frame&#xa;(SSE/Timeline)" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;align=center;" vertex="1" parent="1">
+      <mxGeometry x="625" y="160" width="140" height="55" as="geometry"/>
+    </mxCell>
+    <!-- Persistence Layer -->
+    <mxCell id="30" value="数据持久化层" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=12;verticalAlign=top;align=center;" vertex="1" parent="1">
+      <mxGeometry x="20" y="255" width="760" height="160" as="geometry"/>
+    </mxCell>
+    <!-- SQLite State Store -->
+    <mxCell id="31" value="SQLite State Store (crates/state)" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;verticalAlign=top;align=center;" vertex="1" parent="1">
+      <mxGeometry x="35" y="280" width="340" height="120" as="geometry"/>
+    </mxCell>
+    <mxCell id="32" value="threads&#xa;(会话线程)" style="rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;align=center;" vertex="1" parent="1">
+      <mxGeometry x="45" y="305" width="95" height="35" as="geometry"/>
+    </mxCell>
+    <mxCell id="33" value="turns&#xa;(对话轮次)" style="rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;align=center;" vertex="1" parent="1">
+      <mxGeometry x="150" y="305" width="95" height="35" as="geometry"/>
+    </mxCell>
+    <mxCell id="34" value="items&#xa;(消息/工具调用)" style="rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;align=center;" vertex="1" parent="1">
+      <mxGeometry x="255" y="305" width="110" height="35" as="geometry"/>
+    </mxCell>
+    <mxCell id="35" value="jobs&#xa;(后台任务)" style="rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;align=center;" vertex="1" parent="1">
+      <mxGeometry x="45" y="350" width="95" height="35" as="geometry"/>
+    </mxCell>
+    <mxCell id="36" value="events&#xa;(时间线事件)" style="rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;align=center;" vertex="1" parent="1">
+      <mxGeometry x="150" y="350" width="95" height="35" as="geometry"/>
+    </mxCell>
+    <mxCell id="37" value="artifacts&#xa;(产物引用)" style="rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;align=center;" vertex="1" parent="1">
+      <mxGeometry x="255" y="350" width="110" height="35" as="geometry"/>
+    </mxCell>
+    <!-- File-based Storage -->
+    <mxCell id="38" value="文件系统存储 (~/.codewhale/)" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;verticalAlign=top;align=center;" vertex="1" parent="1">
+      <mxGeometry x="395" y="280" width="370" height="120" as="geometry"/>
+    </mxCell>
+    <mxCell id="39" value="sessions/&#xa;(会话快照 JSON)" style="rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;align=center;" vertex="1" parent="1">
+      <mxGeometry x="405" y="305" width="105" height="35" as="geometry"/>
+    </mxCell>
+    <mxCell id="3a" value="checkpoints/&#xa;(崩溃恢复)" style="rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;align=center;" vertex="1" parent="1">
+      <mxGeometry x="520" y="305" width="105" height="35" as="geometry"/>
+    </mxCell>
+    <mxCell id="3b" value="tasks/&#xa;(任务记录)" style="rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;align=center;" vertex="1" parent="1">
+      <mxGeometry x="635" y="305" width="105" height="35" as="geometry"/>
+    </mxCell>
+    <mxCell id="3c" value="snapshots/&#xa;(Git 工作区快照)" style="rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;align=center;" vertex="1" parent="1">
+      <mxGeometry x="405" y="350" width="105" height="35" as="geometry"/>
+    </mxCell>
+    <mxCell id="3d" value="skills/&#xa;(技能插件)" style="rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;align=center;" vertex="1" parent="1">
+      <mxGeometry x="520" y="350" width="105" height="35" as="geometry"/>
+    </mxCell>
+    <mxCell id="3e" value="audit.log&#xa;(审计日志)" style="rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;align=center;" vertex="1" parent="1">
+      <mxGeometry x="635" y="350" width="105" height="35" as="geometry"/>
+    </mxCell>
+    <!-- Security -->
+    <mxCell id="40" value="安全数据域" style="rounded=1;fillColor=#e6e6e6;strokeColor=#999999;fontStyle=1;fontSize=12;verticalAlign=top;align=center;" vertex="1" parent="1">
+      <mxGeometry x="20" y="430" width="760" height="75" as="geometry"/>
+    </mxCell>
+    <mxCell id="41" value="OS Keyring&#xa;API Key 加密存储" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;align=center;" vertex="1" parent="1">
+      <mxGeometry x="35" y="455" width="150" height="38" as="geometry"/>
+    </mxCell>
+    <mxCell id="42" value="config.toml&#xa;Provider/Model 配置" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;align=center;" vertex="1" parent="1">
+      <mxGeometry x="200" y="455" width="150" height="38" as="geometry"/>
+    </mxCell>
+    <mxCell id="43" value="mcp.json&#xa;MCP 服务配置" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;align=center;" vertex="1" parent="1">
+      <mxGeometry x="365" y="455" width="130" height="38" as="geometry"/>
+    </mxCell>
+    <mxCell id="44" value="managed_config.toml&#xa;企业托管配置" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;align=center;" vertex="1" parent="1">
+      <mxGeometry x="510" y="455" width="130" height="38" as="geometry"/>
+    </mxCell>
+    <mxCell id="45" value="requirements.toml&#xa;策略约束" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;align=center;" vertex="1" parent="1">
+      <mxGeometry x="655" y="455" width="115" height="38" as="geometry"/>
+    </mxCell>
+    <!-- Data Flow Arrows -->
+    <mxCell id="60" value="" style="endArrow=classic;strokeColor=#666666;curved=1;" edge="1" parent="1" source="11" target="21">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="61" value="" style="endArrow=classic;strokeColor=#666666;curved=1;" edge="1" parent="1" source="13" target="21">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="62" value="" style="endArrow=classic;strokeColor=#666666;curved=1;" edge="1" parent="1" source="21" target="31">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="63" value="" style="endArrow=classic;strokeColor=#666666;curved=1;" edge="1" parent="1" source="25" target="38">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <!-- Legend -->
+    <mxCell id="70" value="数据流向说明：用户输入 → 上下文构建 → LLM 推理 → 工具执行 → 结果持久化 → 会话恢复" style="text;html=1;fontSize=10;align=left;fillColor=none;strokeColor=none;fontColor=#666666;" vertex="1" parent="1">
+      <mxGeometry x="20" y="515" width="600" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="71" value="Schema Version Gate: 每条持久化记录携带 schema_version，防止版本不兼容数据覆写" style="text;html=1;fontSize=10;align=left;fillColor=none;strokeColor=none;fontColor=#666666;" vertex="1" parent="1">
+      <mxGeometry x="20" y="535" width="600" height="20" as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>
